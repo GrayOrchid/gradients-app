@@ -1,5 +1,6 @@
 {
   "name": "gradients-app",
+  "homepage": "https://username.github.io/gradients-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "advanced-react-circular-slider": "^1.6.4",
     "framer-motion": "^9.0.4",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
@@ -19,6 +21,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
