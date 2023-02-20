@@ -1,0 +1,135 @@
+.gradients {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 50px;
+}
+.gradients--card {
+	width: 260px;
+	height: 250px;
+	margin: 1rem;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 50px;
+
+	box-shadow: 5px 5px 10px #666666, -5px -5px 10px #ffffff;
+	transition: 1s;
+}
+.gradients--card:hover .gradients--card-content {
+	transform: scale(1.05);
+	visibility: visible;
+	opacity: 100%;
+	background: #f7f7f7;
+	box-shadow: 5px 5px 10px #666666, -5px -5px 10px #ffffff;
+}
+.gradients--card-content {
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	opacity: 0%;
+	visibility: hidden;
+	transition: 0.2s;
+	display: flex;
+	flex-flow: column;
+}
+
+.gradients--card-items {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+.gradients--card-added {
+	transition: 0.2s;
+}
+.gradients--card-btns {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	height: 50px;
+}
+.gradients--card-btn {
+	cursor: pointer;
+	transition: 0.3s;
+}
+.gradients--card-btn:hover {
+	transform: scale(1.5);
+}
+.gradients--card-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	font-size: 16px;
+	font-weight: bold;
+	height: 100px;
+}
+
+.gradients--card-colors {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	max-height: 50px;
+}
+.gradients--card-color {
+	cursor: pointer;
+	margin: 5px;
+	transition: 0.2s;
+}
+.gradients--card-color:hover {
+	color: rgb(101, 149, 239);
+}
+.gradients--card-open-page {
+	position: relative;
+	font-size: 17px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0.5em 1.5em;
+	display: inline-block;
+	border-radius: 6em;
+	transition: all 0.2s;
+	border: none;
+	font-family: inherit;
+	font-weight: 500;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+
+.gradients--card-open-page:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gradients--card-open-page:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gradients--card-open-page::after {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+}
+
+.gradients--card-open-page::after {
+	background-color: #fff;
+}
+
+.gradients--card-open-page:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}

@@ -1,0 +1,27 @@
+.copied {
+	display: flex;
+	text-align: end;
+	align-items: flex-end;
+	position: fixed;
+	visibility: hidden;
+	transition: 0.5s;
+	transform: translateY(-100%);
+	cursor: pointer;
+	z-index: 100;
+	margin-top: 20px;
+}
+.copied--text {
+	margin: 2rem;
+	height: 40px;
+	width: 100px;
+	background: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50px;
+}
+.--active {
+	visibility: visible;
+	transform: translateY(0%);
+}

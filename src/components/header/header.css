@@ -1,0 +1,129 @@
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	z-index: 11;
+	background: white;
+	height: 70px;
+	box-shadow: 0 0 10px black;
+}
+.header--content {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header--logo {
+	margin-left: 2rem;
+}
+.header--items {
+	width: 35%;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 70px;
+}
+
+.header--list-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 300px;
+}
+.header--nav-link {
+	transition: 0.2s;
+}
+.header--nav-link:hover {
+	color: rgb(101, 149, 239);
+}
+.header--input {
+	height: 20px;
+	width: 200px;
+	border: none;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	background: #e8e8e8;
+	transition: 0.3s;
+}
+.header--span {
+	background-color: white;
+	color: white;
+}
+.header--burger-items {
+	width: 200px;
+}
+.header--input:focus {
+	outline-color: #e8e8e8;
+	background: #e8e8e8;
+	transition: 0.3s;
+}
+.header--burger-menu {
+	display: none;
+}
+.header--burger-menu-state-button {
+	display: none;
+	margin: 1rem;
+	font-size: 40px;
+}
+.header--adaptive {
+	display: none;
+}
+@media (max-width: 600px) {
+	.header--adaptive {
+		display: initial;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
+
+	.header--items {
+		display: none;
+	}
+	.header--content {
+		display: none;
+	}
+	.header--burger-menu-state-button {
+		display: initial;
+	}
+	.header--burger-menu {
+		width: 100%;
+		height: 100vh;
+		position: absolute;
+		z-index: 10000;
+		background: white;
+		visibility: hidden;
+		display: initial;
+		transition: 0.2s;
+		transform: translateX(-100%);
+	}
+	.active {
+		visibility: visible;
+		transform: translateX(0%);
+	}
+	.header--burger-menu-content {
+		margin-top: 10px;
+		display: flex;
+		justify-content: center;
+	}
+	.header--burger-nav-link {
+		font-size: 30px;
+		font-weight: bolder;
+		margin-top: 2rem;
+	}
+	.header--burger-nav {
+		height: 200px;
+		margin-top: 2rem;
+	}
+	.header--burger-list-items {
+		height: 100%;
+		display: flex;
+		flex-flow: column;
+		justify-content: space-around;
+		text-align: start;
+	}
+}
