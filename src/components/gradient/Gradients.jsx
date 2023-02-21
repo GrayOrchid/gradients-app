@@ -4,12 +4,13 @@ import gradientsArray from '../../gradientsArray'
 import Gradient from './Gradient'
 import './gradient.css'
 const Gradients = ({ setCopy }) => {
-	const { search, find, count,setCount } = useContext(GlobalContext)
+	const { search, find, count } = useContext(GlobalContext)
 
 	return (
 		<>
 			{search ? (
-				<div className='gradients'>
+				<div
+					className={find.length < 5 ? 'gradients --start' : 'gradients'}>
 					{find.slice(0, 20).map(gradient => (
 						<Gradient
 							gradient={gradient}

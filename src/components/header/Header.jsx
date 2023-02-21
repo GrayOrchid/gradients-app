@@ -4,11 +4,11 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalState'
 import BurgerMenu from './BurgerMenu'
-
 import './header.css'
+import Input from './Input'
 
 const Header = ({ location }) => {
-	const { setSearch, search, show, setShow } = useContext(GlobalContext)
+	const { show, setShow } = useContext(GlobalContext)
 	return (
 		<header className='header'>
 			<div className='header--adaptive'>
@@ -17,16 +17,7 @@ const Header = ({ location }) => {
 					icon={faBars}
 					onClick={() => setShow(true)}
 				/>
-				{location.pathname == '/' ? (
-					<input
-						className='header--input'
-						placeholder='#'
-						type='text'
-						onChange={e => setSearch(e.target.value)}
-					/>
-				) : (
-					<span className='header--input header--span'></span>
-				)}
+				<Input location={location} />
 			</div>
 			<div className='container'>
 				<div className='header--content'>
@@ -38,17 +29,7 @@ const Header = ({ location }) => {
 						</Link>
 					</h1>
 					<div className='header--items'>
-						{location.pathname == '/' ? (
-							<input
-								className='header--input'
-								placeholder='#'
-								type='text'
-								value={search}
-								onChange={e => setSearch(e.target.value)}
-							/>
-						) : (
-							<span className='header--input header--span'></span>
-						)}
+						<Input location={location} />
 						<nav className='header--nav'>
 							<ui className='header--list-items'>
 								<li className='header--nav-item'>

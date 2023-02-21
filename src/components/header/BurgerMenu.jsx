@@ -3,8 +3,8 @@ import { GlobalContext } from '../../context/GlobalState'
 import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
-const BurgerMenu = ({ location }) => {
-	const { setSearch, show, setShow } = useContext(GlobalContext)
+const BurgerMenu = () => {
+	const { show, setShow } = useContext(GlobalContext)
 	return (
 		<div
 			className={

@@ -5,6 +5,9 @@
 	justify-content: center;
 	margin-top: 50px;
 }
+.--start {
+	justify-content: start;
+}
 .gradients--card {
 	width: 260px;
 	height: 250px;
@@ -14,7 +17,6 @@
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 50px;
-
 	box-shadow: 5px 5px 10px #666666, -5px -5px 10px #ffffff;
 	transition: 1s;
 }
@@ -36,7 +38,7 @@
 	flex-flow: column;
 }
 
-.gradients--card-items {
+.gradients--card-edit-items {
 	display: flex;
 	justify-content: space-between;
 	margin: 1rem;
