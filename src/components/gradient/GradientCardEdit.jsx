@@ -28,12 +28,12 @@ const GradientCardEdit = ({ props, setDeg, deg, added }) => {
 		<div className='gradients--card-edit-items'>
 			<div className='gradients--card-btns'>
 				<FontAwesomeIcon
-					className='gradients--card-btn '
+					className='gradients--card-btn'
 					icon={faRotateLeft}
 					onClick={() => setDeg(deg - 90)}
 				/>
 				<FontAwesomeIcon
-					className='gradients--card-btn '
+					className='gradients--card-btn'
 					icon={faRotateRight}
 					onClick={() => setDeg(deg + 90)}
 				/>
