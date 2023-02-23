@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react'
-import { createContext, useReducer } from 'react'
+import { createContext } from 'react'
 import gradientsArray from '../gradientsArray'
-import AppReducer from './AppReducer'
 
-const initialState = {
-	favorite: localStorage.getItem('favorite')
-		? JSON.parse(localStorage.getItem('favorite'))
-		: [],
-}
-
-export const GlobalContext = createContext(initialState)
+export const GlobalContext = createContext()
 
 export const GlobaProvider = props => {
-	const [state, dispatch] = useReducer(AppReducer, initialState)
 	let [search, setSearch] = useState('')
 	let [find, setFind] = useState([])
 	let [count, setCount] = useState(20)
 	let [show, setShow] = useState(false)
 	let [copy, setCopy] = useState(false)
+	let [favorite, setFavorite] = useState([])
+	let saveToLocalStorage = items => {
+		localStorage.setItem(
+			'react-gradients-favorite-items',
+			JSON.stringify(items)
+		)
+	}
+
 	if (copy) {
 		setTimeout(() => {
 			setCopy(false)
 		}, 5000)
 	}
+
+	// DYNAMIC PAGINATION
 	useEffect(() => {
 		document.addEventListener('scroll', scrollHandler)
 	}, [])
@@ -40,6 +42,7 @@ export const GlobaProvider = props => {
 			windowHeight = 0
 		}
 	}
+	// SEARCH GRADIENTS
 	useEffect(() => {
 		let searchGradients = gradientsArray.filter(e =>
 			e.colors.toString().includes(search)
@@ -48,31 +51,36 @@ export const GlobaProvider = props => {
 			setFind(searchGradients)
 		}
 	}, [search])
-	useEffect(() => {
-		localStorage.setItem('favorite', JSON.stringify(state.favorite))
-	}, [state])
 
+	// ADD FAVORITE GRADIENTS
 	const addToFavorite = gradient => {
-		dispatch({ type: 'ADD_TO_FAVORITE', payload: gradient })
+		let newFavoriteGradientsList = [...favorite, gradient]
+		setFavorite(newFavoriteGradientsList)
+		saveToLocalStorage(newFavoriteGradientsList)
 	}
-	const removeItem = name => {
-		dispatch({ type: 'REMOVE_ITEM', payload: name })
+
+	// REMOVE FAVORITE GRADIENT
+	const removeItem = gradient => {
+		let newFavoriteGradientsList = favorite.filter(
+			favoriteGradient => favoriteGradient.name !== gradient.name
+		)
+		setFavorite(newFavoriteGradientsList)
 	}
 
 	return (
 		<GlobalContext.Provider
 			value={{
-				favorite: state.favorite,
 				addToFavorite,
+				setShow,
 				removeItem,
+				setSearch,
+				setCopy,
+				favorite,
 				find,
 				search,
-				setSearch,
 				count,
 				show,
-				setShow,
 				copy,
-				setCopy,
 			}}>
 			{props.children}
 		</GlobalContext.Provider>

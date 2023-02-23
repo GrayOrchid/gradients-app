@@ -6,7 +6,6 @@ import { GlobalContext } from '../../context/GlobalState'
 
 const FavoritePage = () => {
 	const { favorite, setCopy } = useContext(GlobalContext)
-
 	return (
 		<div className='favorite-page'>
 			<div className='container'>

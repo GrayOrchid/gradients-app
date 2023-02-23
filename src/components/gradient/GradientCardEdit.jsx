@@ -11,7 +11,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const GradientCardEdit = ({ props, setDeg, deg, added }) => {
-	console.log(props)
 	const { removeItem, addToFavorite } = useContext(GlobalContext)
 	if (deg > 360) {
 		setDeg((deg = 0))
