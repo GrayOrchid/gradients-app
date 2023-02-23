@@ -27,6 +27,12 @@ export const GlobaProvider = props => {
 	// DYNAMIC PAGINATION
 	useEffect(() => {
 		document.addEventListener('scroll', scrollHandler)
+		let getGradientsFromLocalStorage = JSON.parse(
+			localStorage.getItem('react-gradients-favorite-items')
+		)
+		if (getGradientsFromLocalStorage) {
+			setFavorite(getGradientsFromLocalStorage)
+		}
 	}, [])
 
 	let scrollHandler = e => {
@@ -54,17 +60,18 @@ export const GlobaProvider = props => {
 
 	// ADD FAVORITE GRADIENTS
 	const addToFavorite = gradient => {
-		let newFavoriteGradientsList = [...favorite, gradient]
+		const newFavoriteGradientsList = [...favorite, gradient]
 		setFavorite(newFavoriteGradientsList)
 		saveToLocalStorage(newFavoriteGradientsList)
 	}
 
 	// REMOVE FAVORITE GRADIENT
 	const removeItem = gradient => {
-		let newFavoriteGradientsList = favorite.filter(
-			favoriteGradient => favoriteGradient.name !== gradient.name
+		const newFavoriteGradientsList = favorite.filter(
+			favoriteGradient => favoriteGradient.name !== gradient
 		)
 		setFavorite(newFavoriteGradientsList)
+		saveToLocalStorage(newFavoriteGradientsList)
 	}
 
 	return (
