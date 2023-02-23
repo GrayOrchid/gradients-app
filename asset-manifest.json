@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/gradients-app/static/css/main.456f58cd.css",
-    "main.js": "/gradients-app/static/js/main.907a5287.js",
+    "main.css": "/gradients-app/static/css/main.b8fe8d9b.css",
+    "main.js": "/gradients-app/static/js/main.3938b1e2.js",
     "static/media/Fraction.ttf": "/gradients-app/static/media/Fraction.b0ee32bd96472eb75b1c.ttf",
     "index.html": "/gradients-app/index.html",
-    "main.456f58cd.css.map": "/gradients-app/static/css/main.456f58cd.css.map",
-    "main.907a5287.js.map": "/gradients-app/static/js/main.907a5287.js.map"
+    "main.b8fe8d9b.css.map": "/gradients-app/static/css/main.b8fe8d9b.css.map",
+    "main.3938b1e2.js.map": "/gradients-app/static/js/main.3938b1e2.js.map"
   },
   "entrypoints": [
-    "static/css/main.456f58cd.css",
-    "static/js/main.907a5287.js"
+    "static/css/main.b8fe8d9b.css",
+    "static/js/main.3938b1e2.js"
   ]
 }
